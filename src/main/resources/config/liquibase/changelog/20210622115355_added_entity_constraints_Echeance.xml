@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Echeance.
+    -->
+    <changeSet id="20210622115355-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="assurance_id"
+                                 baseTableName="echeance"
+                                 constraintName="fk_echeance__assurance_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="assurance"/>
+
+        <addForeignKeyConstraint baseColumnNames="certificat_id"
+                                 baseTableName="echeance"
+                                 constraintName="fk_echeance__certificat_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="certificat"/>
+
+        <addForeignKeyConstraint baseColumnNames="echeance_id"
+                                 baseTableName="rel_echeance__seance"
+                                 constraintName="fk_rel_echeance__seance__echeance_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="echeance"/>
+
+        <addForeignKeyConstraint baseColumnNames="seance_id"
+                                 baseTableName="rel_echeance__seance"
+                                 constraintName="fk_rel_echeance__seance__seance_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="seance"/>
+
+        <addForeignKeyConstraint baseColumnNames="sportif_id"
+                                 baseTableName="echeance"
+                                 constraintName="fk_echeance__sportif_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sportif"/>
+    </changeSet>
+</databaseChangeLog>

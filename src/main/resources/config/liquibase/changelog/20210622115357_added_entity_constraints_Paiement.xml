@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Paiement.
+    -->
+    <changeSet id="20210622115357-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="mode_paiement_id"
+                                 baseTableName="paiement"
+                                 constraintName="fk_paiement__mode_paiement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mode_paiement"/>
+
+        <addForeignKeyConstraint baseColumnNames="status_id"
+                                 baseTableName="paiement"
+                                 constraintName="fk_paiement__status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="paiement_status"/>
+
+        <addForeignKeyConstraint baseColumnNames="paiement_id"
+                                 baseTableName="rel_paiement__echeance"
+                                 constraintName="fk_rel_paiement__echeance__paiement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="paiement"/>
+
+        <addForeignKeyConstraint baseColumnNames="echeance_id"
+                                 baseTableName="rel_paiement__echeance"
+                                 constraintName="fk_rel_paiement__echeance__echeance_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="echeance"/>
+    </changeSet>
+</databaseChangeLog>

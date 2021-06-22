@@ -1,0 +1,81 @@
+{
+  "name": "Salle",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "siteWeb",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "logo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "seanceProgramme",
+      "otherEntityRelationshipName": "salle",
+      "relationshipName": "seanceProgramme",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "employe",
+      "otherEntityRelationshipName": "salle",
+      "relationshipName": "employe",
+      "otherEntityField": "code"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pays",
+      "otherEntityRelationshipName": "salle",
+      "relationshipName": "pays",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ville",
+      "otherEntityRelationshipName": "salle",
+      "relationshipName": "ville",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "structure",
+      "otherEntityRelationshipName": "salle",
+      "relationshipName": "structure"
+    }
+  ],
+  "entityTableName": "salle",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210622115345"
+}

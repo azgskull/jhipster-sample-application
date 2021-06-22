@@ -1,0 +1,24 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "organismeAssurance": {
+      "home": {
+        "title": "Organisme Assurances",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Organisme Assurance",
+        "createOrEditLabel": "Create or edit a Organisme Assurance",
+        "notFound": "No Organisme Assurances found"
+      },
+      "created": "A new Organisme Assurance is created with identifier {{ param }}",
+      "updated": "A Organisme Assurance is updated with identifier {{ param }}",
+      "deleted": "A Organisme Assurance is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Organisme Assurance {{ id }}?"
+      },
+      "detail": {
+        "title": "Organisme Assurance"
+      },
+      "id": "ID",
+      "nom": "Nom"
+    }
+  }
+}

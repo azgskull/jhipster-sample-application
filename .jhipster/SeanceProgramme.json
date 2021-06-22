@@ -1,0 +1,65 @@
+{
+  "name": "SeanceProgramme",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "programmeExpression",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "duree",
+      "fieldType": "Double"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "seance",
+      "otherEntityRelationshipName": "seanceProgramme",
+      "relationshipName": "seance",
+      "otherEntityField": "dateDebut"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "adhesion",
+      "otherEntityRelationshipName": "seanceProgramme",
+      "relationshipName": "adhesion"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "discipline",
+      "otherEntityRelationshipName": "seanceProgramme",
+      "relationshipName": "discipline",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "salle",
+      "otherEntityRelationshipName": "seanceProgramme",
+      "relationshipName": "salle"
+    }
+  ],
+  "entityTableName": "seance_programme",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210622115348"
+}

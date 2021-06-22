@@ -1,0 +1,41 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "sportif": {
+      "home": {
+        "title": "Sportifs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sportif",
+        "createOrEditLabel": "Create or edit a Sportif",
+        "notFound": "No Sportifs found"
+      },
+      "created": "A new Sportif is created with identifier {{ param }}",
+      "updated": "A Sportif is updated with identifier {{ param }}",
+      "deleted": "A Sportif is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sportif {{ id }}?"
+      },
+      "detail": {
+        "title": "Sportif"
+      },
+      "id": "ID",
+      "code": "Code",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "photo": "Photo",
+      "dateNaissance": "Date Naissance",
+      "numeroIdentite": "Numero Identite",
+      "adresse": "Adresse",
+      "telephone": "Telephone",
+      "email": "Email",
+      "utilisateur": "Utilisateur",
+      "echeance": "Echeance",
+      "certificat": "Certificat",
+      "adhesion": "Adhesion",
+      "presence": "Presence",
+      "pays": "Pays",
+      "ville": "Ville",
+      "typeIdentite": "Type Identite",
+      "assurance": "Assurance"
+    }
+  }
+}

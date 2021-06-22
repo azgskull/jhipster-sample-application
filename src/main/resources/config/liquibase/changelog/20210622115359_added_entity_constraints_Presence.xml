@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Presence.
+    -->
+    <changeSet id="20210622115359-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="role_id"
+                                 baseTableName="presence"
+                                 constraintName="fk_presence__role_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="role"/>
+
+        <addForeignKeyConstraint baseColumnNames="seance_id"
+                                 baseTableName="presence"
+                                 constraintName="fk_presence__seance_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="seance"/>
+
+        <addForeignKeyConstraint baseColumnNames="sportif_id"
+                                 baseTableName="presence"
+                                 constraintName="fk_presence__sportif_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sportif"/>
+    </changeSet>
+</databaseChangeLog>

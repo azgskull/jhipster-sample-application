@@ -1,0 +1,29 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "templateCertificat": {
+      "home": {
+        "title": "Template Certificats",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Template Certificat",
+        "createOrEditLabel": "Create or edit a Template Certificat",
+        "notFound": "No Template Certificats found"
+      },
+      "created": "A new Template Certificat is created with identifier {{ param }}",
+      "updated": "A Template Certificat is updated with identifier {{ param }}",
+      "deleted": "A Template Certificat is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Template Certificat {{ id }}?"
+      },
+      "detail": {
+        "title": "Template Certificat"
+      },
+      "id": "ID",
+      "code": "Code",
+      "nom": "Nom",
+      "description": "Description",
+      "fichier": "Fichier",
+      "discipline": "Discipline",
+      "typeCertificat": "Type Certificat"
+    }
+  }
+}

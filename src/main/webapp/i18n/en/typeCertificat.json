@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "typeCertificat": {
+      "home": {
+        "title": "Type Certificats",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Type Certificat",
+        "createOrEditLabel": "Create or edit a Type Certificat",
+        "notFound": "No Type Certificats found"
+      },
+      "created": "A new Type Certificat is created with identifier {{ param }}",
+      "updated": "A Type Certificat is updated with identifier {{ param }}",
+      "deleted": "A Type Certificat is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Type Certificat {{ id }}?"
+      },
+      "detail": {
+        "title": "Type Certificat"
+      },
+      "id": "ID",
+      "code": "Code",
+      "nom": "Nom",
+      "description": "Description"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Assurance.
+    -->
+    <changeSet id="20210622115354-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="organisme_assurance_id"
+                                 baseTableName="assurance"
+                                 constraintName="fk_assurance__organisme_assurance_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="organisme_assurance"/>
+
+        <addForeignKeyConstraint baseColumnNames="assurance_id"
+                                 baseTableName="rel_assurance__sportif"
+                                 constraintName="fk_rel_assurance__sportif__assurance_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="assurance"/>
+
+        <addForeignKeyConstraint baseColumnNames="sportif_id"
+                                 baseTableName="rel_assurance__sportif"
+                                 constraintName="fk_rel_assurance__sportif__sportif_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sportif"/>
+    </changeSet>
+</databaseChangeLog>

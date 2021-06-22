@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Sportif.
+    -->
+    <changeSet id="20210622115349-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="utilisateur_id"
+                                 baseTableName="sportif"
+                                 constraintName="fk_sportif__utilisateur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="pays_id"
+                                 baseTableName="sportif"
+                                 constraintName="fk_sportif__pays_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pays"/>
+
+        <addForeignKeyConstraint baseColumnNames="ville_id"
+                                 baseTableName="sportif"
+                                 constraintName="fk_sportif__ville_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ville"/>
+
+        <addForeignKeyConstraint baseColumnNames="type_identite_id"
+                                 baseTableName="sportif"
+                                 constraintName="fk_sportif__type_identite_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="type_identite"/>
+    </changeSet>
+</databaseChangeLog>

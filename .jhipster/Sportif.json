@@ -1,0 +1,116 @@
+{
+  "name": "Sportif",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "photo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateNaissance",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "numeroIdentite",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "sportif",
+      "relationshipName": "utilisateur",
+      "otherEntityField": "login",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "echeance",
+      "otherEntityRelationshipName": "sportif",
+      "relationshipName": "echeance"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "certificat",
+      "otherEntityRelationshipName": "sportif",
+      "relationshipName": "certificat",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "adhesion",
+      "otherEntityRelationshipName": "sportif",
+      "relationshipName": "adhesion"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "presence",
+      "otherEntityRelationshipName": "sportif",
+      "relationshipName": "presence"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pays",
+      "otherEntityRelationshipName": "sportif",
+      "relationshipName": "pays",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ville",
+      "otherEntityRelationshipName": "sportif",
+      "relationshipName": "ville",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "typeIdentite",
+      "otherEntityRelationshipName": "sportif",
+      "relationshipName": "typeIdentite"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "assurance",
+      "otherEntityRelationshipName": "sportif",
+      "relationshipName": "assurance",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "sportif",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210622115349"
+}

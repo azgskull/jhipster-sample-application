@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "modePaiement": {
+      "home": {
+        "title": "Mode Paiements",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Mode Paiement",
+        "createOrEditLabel": "Create or edit a Mode Paiement",
+        "notFound": "No Mode Paiements found"
+      },
+      "created": "A new Mode Paiement is created with identifier {{ param }}",
+      "updated": "A Mode Paiement is updated with identifier {{ param }}",
+      "deleted": "A Mode Paiement is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Mode Paiement {{ id }}?"
+      },
+      "detail": {
+        "title": "Mode Paiement"
+      },
+      "id": "ID",
+      "code": "Code",
+      "nom": "Nom",
+      "description": "Description"
+    }
+  }
+}
