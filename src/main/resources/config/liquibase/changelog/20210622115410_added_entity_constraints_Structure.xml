@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Structure.
+    -->
+    <changeSet id="20210622115410-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="pays_id"
+                                 baseTableName="structure"
+                                 constraintName="fk_structure__pays_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pays"/>
+
+        <addForeignKeyConstraint baseColumnNames="ville_id"
+                                 baseTableName="structure"
+                                 constraintName="fk_structure__ville_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ville"/>
+
+        <addForeignKeyConstraint baseColumnNames="structure_id"
+                                 baseTableName="rel_structure__discipline"
+                                 constraintName="fk_rel_structure__discipline__structure_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="structure"/>
+
+        <addForeignKeyConstraint baseColumnNames="discipline_id"
+                                 baseTableName="rel_structure__discipline"
+                                 constraintName="fk_rel_structure__discipline__discipline_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="discipline"/>
+    </changeSet>
+</databaseChangeLog>

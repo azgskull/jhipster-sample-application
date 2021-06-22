@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity SeanceProgramme.
+    -->
+    <changeSet id="20210622115414-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="discipline_id"
+                                 baseTableName="seance_programme"
+                                 constraintName="fk_seance_programme__discipline_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="discipline"/>
+
+        <addForeignKeyConstraint baseColumnNames="salle_id"
+                                 baseTableName="seance_programme"
+                                 constraintName="fk_seance_programme__salle_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="salle"/>
+    </changeSet>
+</databaseChangeLog>

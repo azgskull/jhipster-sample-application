@@ -1,0 +1,65 @@
+{
+  "name": "Seance",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "heureDebut",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "heureFin",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "presence",
+      "otherEntityRelationshipName": "seance",
+      "relationshipName": "presence"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "typeSeance",
+      "otherEntityRelationshipName": "seance",
+      "relationshipName": "typeSeance",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "seanceProgramme",
+      "otherEntityRelationshipName": "seance",
+      "relationshipName": "seanceProgramme"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "echeance",
+      "otherEntityRelationshipName": "seance",
+      "relationshipName": "echeance",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "seance",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210622115413"
+}
