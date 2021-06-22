@@ -1,0 +1,48 @@
+{
+  "name": "Presence",
+  "fields": [
+    {
+      "fieldName": "heureDebut",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "heureFin",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "role",
+      "otherEntityRelationshipName": "presence",
+      "relationshipName": "role",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "seance",
+      "otherEntityRelationshipName": "presence",
+      "relationshipName": "seance"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "sportif",
+      "otherEntityRelationshipName": "presence",
+      "relationshipName": "sportif"
+    }
+  ],
+  "entityTableName": "presence",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210622115425"
+}

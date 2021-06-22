@@ -1,0 +1,27 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "typeIdentite": {
+      "home": {
+        "title": "Type Identites",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Type Identite",
+        "createOrEditLabel": "Create or edit a Type Identite",
+        "notFound": "No Type Identites found"
+      },
+      "created": "A new Type Identite is created with identifier {{ param }}",
+      "updated": "A Type Identite is updated with identifier {{ param }}",
+      "deleted": "A Type Identite is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Type Identite {{ id }}?"
+      },
+      "detail": {
+        "title": "Type Identite"
+      },
+      "id": "ID",
+      "code": "Code",
+      "nom": "Nom",
+      "description": "Description",
+      "logo": "Logo"
+    }
+  }
+}

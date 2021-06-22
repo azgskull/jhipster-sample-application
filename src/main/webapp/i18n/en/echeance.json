@@ -1,0 +1,32 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "echeance": {
+      "home": {
+        "title": "Echeances",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Echeance",
+        "createOrEditLabel": "Create or edit a Echeance",
+        "notFound": "No Echeances found"
+      },
+      "created": "A new Echeance is created with identifier {{ param }}",
+      "updated": "A Echeance is updated with identifier {{ param }}",
+      "deleted": "A Echeance is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Echeance {{ id }}?"
+      },
+      "detail": {
+        "title": "Echeance"
+      },
+      "id": "ID",
+      "code": "Code",
+      "datePrevuPaiement": "Date Prevu Paiement",
+      "montant": "Montant",
+      "payeTotalement": "Paye Totalement",
+      "assurance": "Assurance",
+      "certificat": "Certificat",
+      "seance": "Seance",
+      "sportif": "Sportif",
+      "paiement": "Paiement"
+    }
+  }
+}

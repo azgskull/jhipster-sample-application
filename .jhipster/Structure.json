@@ -1,0 +1,76 @@
+{
+  "name": "Structure",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "siteWeb",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "logo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "salle",
+      "otherEntityRelationshipName": "structure",
+      "relationshipName": "salle",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pays",
+      "otherEntityRelationshipName": "structure",
+      "relationshipName": "pays",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ville",
+      "otherEntityRelationshipName": "structure",
+      "relationshipName": "ville",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "discipline",
+      "otherEntityRelationshipName": "discipline",
+      "relationshipName": "discipline",
+      "otherEntityField": "nom",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "structure",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210622115410"
+}

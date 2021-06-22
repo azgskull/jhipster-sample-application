@@ -1,0 +1,71 @@
+{
+  "name": "Echeance",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "datePrevuPaiement",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "montant",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "payeTotalement",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "assurance",
+      "otherEntityRelationshipName": "echeance",
+      "relationshipName": "assurance",
+      "otherEntityField": "code"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "certificat",
+      "otherEntityRelationshipName": "echeance",
+      "relationshipName": "certificat",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "seance",
+      "otherEntityRelationshipName": "echeance",
+      "relationshipName": "seance",
+      "otherEntityField": "nom",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "sportif",
+      "otherEntityRelationshipName": "echeance",
+      "relationshipName": "sportif"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "paiement",
+      "otherEntityRelationshipName": "echeance",
+      "relationshipName": "paiement",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "echeance",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210622115421"
+}

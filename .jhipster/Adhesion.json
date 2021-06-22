@@ -1,0 +1,45 @@
+{
+  "name": "Adhesion",
+  "fields": [
+    {
+      "fieldName": "dateDebut",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateFin",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "role",
+      "otherEntityRelationshipName": "adhesion",
+      "relationshipName": "role",
+      "otherEntityField": "nom"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "seanceProgramme",
+      "otherEntityRelationshipName": "adhesion",
+      "relationshipName": "seanceProgramme"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "sportif",
+      "otherEntityRelationshipName": "adhesion",
+      "relationshipName": "sportif"
+    }
+  ],
+  "entityTableName": "adhesion",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210622115418"
+}
