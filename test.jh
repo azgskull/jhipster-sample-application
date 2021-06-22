@@ -1,0 +1,276 @@
+entity Pays {
+    code String required
+    nom String required
+    description String
+    logo ImageBlob
+}
+entity Ville {
+    code String required
+    nom String required
+    description String
+}
+
+ 
+
+entity Structure {
+    nom String required
+    description String
+    siteWeb String
+    adresse String
+    logo ImageBlob
+    email String
+    telephone String
+}
+
+ 
+
+entity Salle {
+    nom String required
+    description String
+    siteWeb String
+    adresse String
+    logo ImageBlob
+    email String
+    telephone String
+}
+entity TypeSeance {
+    code String required
+    nom String required
+    description String
+}
+entity Seance {
+    nom String required
+    description String
+    date LocalDate required
+    heureDebut String
+    heureFin String
+}
+
+ 
+
+entity SeanceProgramme {
+    code String required
+    nom String required
+    description String
+    programmeExpression String
+    duree Double
+}
+
+ 
+
+entity Sportif {
+    code String required
+    nom String required
+    prenom String required
+    photo String
+    dateNaissance LocalDate
+    numeroIdentite String
+    adresse String
+    telephone String
+    email String
+}
+
+ 
+
+entity Employe {
+    code String required
+    nom String required
+    prenom String required
+    photo String
+    dateNaissance LocalDate
+    numeroIdentite String
+    adresse String
+    telephone String
+    email String
+}
+
+ 
+
+entity TypeIdentite {
+    code String required
+    nom String required
+    description String
+    logo ImageBlob
+}
+
+ 
+
+entity Adhesion {
+    dateDebut LocalDate required
+    dateFin LocalDate
+}
+
+ 
+
+entity OrganismeAssurance {
+    nom String required
+}
+entity Assurance {
+    code String required
+    dateDebut LocalDate required
+    dateFin LocalDate required
+    details String
+}
+
+ 
+
+entity Echeance {
+    code String required
+    datePrevuPaiement LocalDate required
+    montant Double required
+    payeTotalement Boolean
+}
+
+ 
+
+entity PaiementStatus {
+    code String required
+    nom String required
+    description String
+}
+
+ 
+
+entity Paiement {
+    code String required
+    date LocalDate required
+    montant Double required
+    description String
+}
+
+ 
+
+entity ModePaiement {
+    code String required
+    nom String required
+    description String
+}
+
+ 
+
+entity Presence {
+    heureDebut String
+    heureFin String
+    description String
+}
+
+ 
+
+entity TypeCertificat {
+    code String required
+    nom String required
+    description String
+}
+
+ 
+
+entity Certificat {
+    code String required
+    nom String required
+    description String
+    date LocalDate required
+    dateFin LocalDate
+    fichier ImageBlob
+}
+
+ 
+
+entity TemplateCertificat {
+    code String required
+    nom String required
+    description String
+    fichier ImageBlob
+}
+
+ 
+
+entity Role {
+    code String required
+    nom String required
+    description String
+}
+
+ 
+
+entity Discipline {
+    code String required
+    nom String required
+    description String
+    photo String
+}
+
+ 
+
+relationship ManyToMany {
+    
+    Assurance{sportif(nom)} to Sportif{assurance} ,
+    Structure{discipline(nom)} to Discipline{discipline},
+    Echeance{seance(nom)} to Seance{echeance},
+    Paiement{echeance(code)} to Echeance{paiement}
+}
+relationship OneToMany {
+    Pays{ville(nom)} to Ville,
+    
+    Salle{seanceProgramme(nom)} to SeanceProgramme, 
+    Salle{employe(code)} to Employe,
+    
+    SeanceProgramme{seance(dateDebut)} to Seance,
+    SeanceProgramme{adhesion} to Adhesion,
+    
+    Seance{presence} to Presence,
+    
+    Sportif{echeance} to Echeance,
+    Sportif{certificat(nom)} to Certificat,
+    Sportif{adhesion} to Adhesion,
+    Sportif{presence} to Presence,
+    
+    
+    Structure{salle(nom)} to Salle
+}
+relationship ManyToOne {
+    Structure{pays(nom)} to Pays,
+    Structure{ville(nom)} to Ville,
+    
+    Salle{pays(nom)} to Pays,
+    Salle{ville(nom)} to Ville,
+    
+    Sportif{pays(nom)} to Pays,
+    Sportif{ville(nom)} to Ville,
+    Sportif{typeIdentite} to TypeIdentite,
+    
+    Employe{typeIdentite} to TypeIdentite,
+    
+    Seance{typeSeance(nom)} to TypeSeance,
+    Assurance{organismeAssurance(nom)} to OrganismeAssurance,
+    
+    Certificat{templateCertificat(nom)} to TemplateCertificat,
+    Certificat{seance(nom)} to Seance,
+
+ 
+
+    Paiement{modePaiement(nom)} to ModePaiement,
+    Paiement{status(code)} to PaiementStatus,
+    
+    Echeance{assurance(code)} to Assurance,
+    Echeance{certificat(nom)} to Certificat,
+    
+    SeanceProgramme{discipline(nom)} to Discipline,
+    Presence{role(nom)} to Role,
+    Adhesion{role(nom)} to Role,
+    
+    TemplateCertificat{discipline(nom)} to Discipline,
+    TemplateCertificat{typeCertificat(nom)} to TypeCertificat
+}
+relationship OneToOne {
+    Sportif{utilisateur(login)} to User,
+    Employe{utilisateur(login)} to User
+}
+
+ 
+
+paginate all with pagination
+
+ 
+
+service all with serviceImpl
+dto * with mapstruct
